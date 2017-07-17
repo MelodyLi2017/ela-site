@@ -46,8 +46,7 @@ jspm_packages
 dist/
 
 # Compiled output frontend
-public/js/*
-public/css/*
+public/*
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
