@@ -11,10 +11,7 @@
     "webpack-dev-server": "^2.5.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "echo \"Error: no test specified\" && exit 1",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "node dist/start.js"
   },
   "babel": {
     "presets": [
