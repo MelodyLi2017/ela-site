@@ -2,12 +2,14 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
 import * as logger from 'morgan';
+import 'reflect-metadata';
+import { Container } from 'typescript-ioc'
 
-import AuthRouter from './routes/auth';
-import CourseRouter from './routes/course';
-import LectureRouter from './routes/lecture';
-import QuestionRouter from './routes/question';
 import UserRouter from './routes/user';
+import EditRouter from './routes/edit';
+import FileRouter from './routes/file';
+import LanguageRouter from './routes/language';
+import { Database } from './database/database';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -18,8 +20,14 @@ class App {
   //Run configuration methods on the Express instance.
   constructor() {
     this.express = express();
+    this.initDatabase();
     this.middleware();
     this.routes();
+  }
+
+  /* Initializes the connection to the database */
+  private initDatabase(): void {
+    (<Database>Container.get(Database)).createConnection();
   }
 
   // Configure Express middleware.
@@ -34,7 +42,10 @@ class App {
 
   // Configure API endpoints.
   private routes(): void {
-    //this.express.use('/api/v1/auth/', AuthRouter);
+    this.express.use('/api/v1/user/', UserRouter);
+    this.express.use('/api/v1/edit/', EditRouter);
+    this.express.use('/api/v1/file/', FileRouter);
+    this.express.use('/api/v1/language/', LanguageRouter);
   }
 
 }

@@ -1,0 +1,10 @@
+{
+  "databaseConnectionConfig": {
+    "type": "mysql",
+    "host": "myHost",
+    "username": "myUser",
+    "password": "myPassword",
+    "database": "myDatabase",
+    "port": 3306
+  }
+}

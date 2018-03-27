@@ -4,17 +4,19 @@
   "private": true,
   "dependencies": {
     "babel-loader": "^7.1.1",
-    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
+    "morgan": "^1.8.2",
     "mysql": "^2.13.0",
     "passport": "^0.3.2",
     "passport-custom": "^1.0.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.0.11",
     "typescript-ioc": "^0.4.2",
     "webpack": "^3.1.0",
     "webpack-dev-server": "^2.5.1"
@@ -29,7 +31,6 @@
     ]
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.8",
     "@types/body-parser": "^1.16.4",
     "@types/chai": "^4.0.1",
     "@types/chai-http": "^3.0.0",
